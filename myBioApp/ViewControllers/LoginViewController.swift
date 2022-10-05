@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
+    private let personalData = PersonalData.getPersonalData()
+    
     private let user = "user"
     private let password = "1"
     
@@ -37,6 +39,26 @@ class LoginViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach { viewControllers in
+            if let homeVC = viewControllers as? HomeViewController {
+                homeVC.userNameLabel = "Hi, \(personalData.titleName)!"
+                homeVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+            } else if let navigationVC = viewControllers as? UINavigationController {
+                guard let userVC = navigationVC.topViewController as? UserViewController else { return }
+                userVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+                userVC.titleOfUserView.title = personalData.titleName
+            } else if let contactVC = viewControllers as? ContactViewController {
+                contactVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+            } else if let logOutVC = viewControllers as? LogOutViewController {
+                logOutVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+            }
+        }
     }
     
     @IBAction func logInButtonTapped() {
