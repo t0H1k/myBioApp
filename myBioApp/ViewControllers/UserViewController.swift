@@ -11,24 +11,20 @@ class UserViewController: UIViewController {
     
     @IBOutlet var titleOfUserView: UINavigationItem!
     
-    @IBOutlet var nameOfUser: UILabel!
-    @IBOutlet var surnameOfUser: UILabel!
-    @IBOutlet var dateOfBitrh: UILabel!
-    @IBOutlet var workOfUser: UILabel!
-    @IBOutlet var hobbyOfUser: UILabel!
+    @IBOutlet var nameOfUserLabel: UILabel!
+    @IBOutlet var surnameOfUserLabel: UILabel!
+    @IBOutlet var dateOfBirthLabel: UILabel!
+    @IBOutlet var workOfUserLabel: UILabel!
+    @IBOutlet var hobbyOfUserLabel: UILabel!
     
-    private let personalData = PersonalData.getPersonalData()
-    
+    private let personData = Person.getPersonalData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameOfUser.text = personalData.personName
-        surnameOfUser.text = personalData.personSurname
-        dateOfBitrh.text = personalData.personDateOfBirth
-        workOfUser.text = personalData.personWork
-        hobbyOfUser.text = personalData.personHobby
+        nameOfUserLabel.text = personData.personName
+        surnameOfUserLabel.text = personData.personSurname
+        dateOfBirthLabel.text = personData.personDateOfBirth
+        workOfUserLabel.text = personData.personWork
+        hobbyOfUserLabel.text = personData.personHobby
     }
 }
-    
-
-

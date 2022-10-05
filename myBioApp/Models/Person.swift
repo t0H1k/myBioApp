@@ -1,11 +1,15 @@
 //
-//  PersonalData.swift
+//  Person.swift
 //  myBioApp
 //
 //  Created by Anton Boev on 04.10.2022.
 //
 
-struct PersonalData {
+struct Person {
+    
+    let username: String
+    let password: String
+    
     let titleName: String
     let personName: String
     let personSurname: String
@@ -19,8 +23,10 @@ struct PersonalData {
     
     let bioHistory: String
     
-    static func getPersonalData() -> PersonalData {
-        PersonalData(
+    static func getPersonalData() -> Person {
+        Person(
+            username: "user",
+            password: "1",
             titleName: "Anton Boev",
             personName: "Антон",
             personSurname: "Боев",

@@ -19,7 +19,7 @@
 		8E9ADF2628EC89510092DCDA /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2528EC89510092DCDA /* LogOutViewController.swift */; };
 		8E9ADF2828EC98D10092DCDA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2728EC98D10092DCDA /* TabBarViewController.swift */; };
 		8E9ADF2A28ECA1630092DCDA /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2928ECA1630092DCDA /* BioViewController.swift */; };
-		8E9ADF2C28ECA2490092DCDA /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2B28ECA2490092DCDA /* PersonalData.swift */; };
+		8E9ADF2C28ECA2490092DCDA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2B28ECA2490092DCDA /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		8E9ADF2528EC89510092DCDA /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		8E9ADF2728EC98D10092DCDA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8E9ADF2928ECA1630092DCDA /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
-		8E9ADF2B28ECA2490092DCDA /* PersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalData.swift; sourceTree = "<group>"; };
+		8E9ADF2B28ECA2490092DCDA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 		8E9ADF1E28EC86B80092DCDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E9ADF2B28ECA2490092DCDA /* PersonalData.swift */,
+				8E9ADF2B28ECA2490092DCDA /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 				8E9ADF2428EC89460092DCDA /* ContactViewController.swift in Sources */,
 				8E9ADF2628EC89510092DCDA /* LogOutViewController.swift in Sources */,
 				8E9ADF2A28ECA1630092DCDA /* BioViewController.swift in Sources */,
-				8E9ADF2C28ECA2490092DCDA /* PersonalData.swift in Sources */,
+				8E9ADF2C28ECA2490092DCDA /* Person.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

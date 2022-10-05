@@ -11,7 +11,7 @@ class BioViewController: UIViewController {
 
     @IBOutlet var bioLabel: UILabel!
     
-    private let personalData = PersonalData.getPersonalData()
+    private let personData = Person.getPersonalData()
     
     private let firstColor = UIColor(
         red: 15/255,
@@ -29,7 +29,7 @@ class BioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bioLabel.text = personalData.bioHistory
+        bioLabel.text = personData.bioHistory
         view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
     }
 
