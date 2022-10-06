@@ -49,14 +49,22 @@ class LoginViewController: UIViewController {
         
         viewControllers.forEach { viewControllers in
             if let homeVC = viewControllers as? HomeViewController {
-                homeVC.userNameLabel = "Hi, \(personData.titleName)!"
+                homeVC.userNameLabel = personData.titleName
                 homeVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
             } else if let navigationVC = viewControllers as? UINavigationController {
                 guard let userVC = navigationVC.topViewController as? UserViewController else { return }
                 userVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
                 userVC.titleOfUserView.title = personData.titleName
+                userVC.nameOfUserLabel.text = personData.personName
+                userVC.surnameOfUserLabel.text = personData.personSurname
+                userVC.dateOfBirthLabel.text = personData.personDateOfBirth
+                userVC.workOfUserLabel.text = personData.personWork
+                userVC.hobbyOfUserLabel.text = personData.personHobby
             } else if let contactVC = viewControllers as? ContactViewController {
                 contactVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+                contactVC.phoneNumberLabel.text = personData.contactNumber
+                contactVC.emailLabel.text = personData.contactEmail
+                contactVC.cityLabel.text = personData.contactCity
             } else if let logOutVC = viewControllers as? LogOutViewController {
                 logOutVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
             }

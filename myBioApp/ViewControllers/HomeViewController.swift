@@ -15,6 +15,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeUserNameLabel.text = userNameLabel
+        homeUserNameLabel.text = "Hi, \(userNameLabel ?? "")!"
     }
 }

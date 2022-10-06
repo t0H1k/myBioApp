@@ -17,14 +17,5 @@ class UserViewController: UIViewController {
     @IBOutlet var workOfUserLabel: UILabel!
     @IBOutlet var hobbyOfUserLabel: UILabel!
     
-    private let personData = Person.getPersonalData()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nameOfUserLabel.text = personData.personName
-        surnameOfUserLabel.text = personData.personSurname
-        dateOfBirthLabel.text = personData.personDateOfBirth
-        workOfUserLabel.text = personData.personWork
-        hobbyOfUserLabel.text = personData.personHobby
-    }
 }
+

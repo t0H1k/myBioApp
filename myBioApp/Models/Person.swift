@@ -31,7 +31,7 @@ struct Person {
             personName: "Антон",
             personSurname: "Боев",
             personDateOfBirth: "33",
-            personWork: "Будущий разработчик IOs",
+            personWork: "Разработчик IOs",
             personHobby: "Автомобили",
             contactNumber: "89031180745",
             contactEmail: "boev03@gmail.com",
