@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E3FFF5828F02BE4009038A3 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FFF5728F02BE4009038A3 /* Extension + UIView.swift */; };
 		8E9ADF0828EC7F2C0092DCDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF0728EC7F2C0092DCDA /* AppDelegate.swift */; };
 		8E9ADF0A28EC7F2C0092DCDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF0928EC7F2C0092DCDA /* SceneDelegate.swift */; };
 		8E9ADF0C28EC7F2C0092DCDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF0B28EC7F2C0092DCDA /* LoginViewController.swift */; };
@@ -19,10 +20,11 @@
 		8E9ADF2628EC89510092DCDA /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2528EC89510092DCDA /* LogOutViewController.swift */; };
 		8E9ADF2828EC98D10092DCDA /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2728EC98D10092DCDA /* TabBarViewController.swift */; };
 		8E9ADF2A28ECA1630092DCDA /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2928ECA1630092DCDA /* BioViewController.swift */; };
-		8E9ADF2C28ECA2490092DCDA /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2B28ECA2490092DCDA /* Person.swift */; };
+		8E9ADF2C28ECA2490092DCDA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9ADF2B28ECA2490092DCDA /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E3FFF5728F02BE4009038A3 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		8E9ADF0428EC7F2C0092DCDA /* myBioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myBioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E9ADF0728EC7F2C0092DCDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E9ADF0928EC7F2C0092DCDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		8E9ADF2528EC89510092DCDA /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		8E9ADF2728EC98D10092DCDA /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8E9ADF2928ECA1630092DCDA /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
-		8E9ADF2B28ECA2490092DCDA /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8E9ADF2B28ECA2490092DCDA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E3FFF5928F02BEA009038A3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8E3FFF5728F02BE4009038A3 /* Extension + UIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		8E9ADEFB28EC7F2C0092DCDA = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				8E9ADF1C28EC80370092DCDA /* ViewControllers */,
-				8E9ADF1E28EC86B80092DCDA /* Models */,
 				8E9ADF1B28EC80210092DCDA /* App */,
 				8E9ADF1D28EC804B0092DCDA /* Storyboards */,
 				8E9ADF1028EC7F320092DCDA /* Assets.xcassets */,
@@ -96,9 +105,11 @@
 				8E9ADF2728EC98D10092DCDA /* TabBarViewController.swift */,
 				8E9ADF1F28EC892C0092DCDA /* HomeViewController.swift */,
 				8E9ADF2128EC89390092DCDA /* UserViewController.swift */,
+				8E9ADF2928ECA1630092DCDA /* BioViewController.swift */,
 				8E9ADF2328EC89460092DCDA /* ContactViewController.swift */,
 				8E9ADF2528EC89510092DCDA /* LogOutViewController.swift */,
-				8E9ADF2928ECA1630092DCDA /* BioViewController.swift */,
+				8E9ADF1E28EC86B80092DCDA /* Models */,
+				8E3FFF5928F02BEA009038A3 /* Extension */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,7 +126,7 @@
 		8E9ADF1E28EC86B80092DCDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8E9ADF2B28ECA2490092DCDA /* Person.swift */,
+				8E9ADF2B28ECA2490092DCDA /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3FFF5828F02BE4009038A3 /* Extension + UIView.swift in Sources */,
 				8E9ADF2828EC98D10092DCDA /* TabBarViewController.swift in Sources */,
 				8E9ADF0C28EC7F2C0092DCDA /* LoginViewController.swift in Sources */,
 				8E9ADF2228EC89390092DCDA /* UserViewController.swift in Sources */,
@@ -200,7 +212,7 @@
 				8E9ADF2428EC89460092DCDA /* ContactViewController.swift in Sources */,
 				8E9ADF2628EC89510092DCDA /* LogOutViewController.swift in Sources */,
 				8E9ADF2A28ECA1630092DCDA /* BioViewController.swift in Sources */,
-				8E9ADF2C28ECA2490092DCDA /* Person.swift in Sources */,
+				8E9ADF2C28ECA2490092DCDA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,13 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet var homeUserNameLabel: UILabel!
+    var user: User!
     
     var userNameLabel: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeUserNameLabel.text = "Hi, \(userNameLabel ?? "")!"
+        view.addVerticalGradientLayer()
+        homeUserNameLabel.text = "Hi, \(user.person.fullName)!"
     }
 }

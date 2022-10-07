@@ -9,28 +9,17 @@ import UIKit
 
 class BioViewController: UIViewController {
 
-    @IBOutlet var bioLabel: UILabel!
+    @IBOutlet var userBioTextView: UITextView!
     
-    private let personData = Person.getPersonalData()
-    
-    private let firstColor = UIColor(
-        red: 15/255,
-        green: 115/255,
-        blue: 114/255,
-        alpha: 1
-    )
-    
-    private let secondColor = UIColor(
-        red: 202/255,
-        green: 117/255,
-        blue: 6/255,
-        alpha: 1
-    )
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bioLabel.text = personData.bioHistory
-        view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+        view.addVerticalGradientLayer()
+        title = "\(user.person.fullName) Bio"
+        userBioTextView.backgroundColor = .clear
+        userBioTextView.textColor = .white
+        userBioTextView.text = user.person.bio
     }
 
 }

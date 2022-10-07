@@ -15,26 +15,39 @@ class LoginViewController: UIViewController {
     
     
     //MARK: - Private Properties
-    private let personData = Person.getPersonalData()
+    private let user = User.getUserData()
         
-    private let firstColor = UIColor(
-        red: 15/255,
-        green: 115/255,
-        blue: 114/255,
-        alpha: 1
-    )
-    
-    private let secondColor = UIColor(
-        red: 202/255,
-        green: 117/255,
-        blue: 6/255,
-        alpha: 1
-    )
-    
+
     //MARK: - Live Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
+        view.addVerticalGradientLayer()
+        userNameTF.text = user.login
+        passwordTF.text = user.password
+    }
+    
+
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarVC = segue.destination as? UITabBarController else {
+            return
+        }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach {
+            if let homeVC = $0 as? HomeViewController {
+                homeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userVC = navigationVC.topViewController
+                guard let userVC = userVC as? UserViewController else {
+                    return
+                }
+                userVC.user = user
+            } else  if let contactVC = $0 as? ContactViewController {
+                contactVC.user = user
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,37 +55,8 @@ class LoginViewController: UIViewController {
         view.endEditing(true)
     }
     
-    //MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let tabBarVC = segue.destination as? UITabBarController else { return }
-        guard let viewControllers = tabBarVC.viewControllers else { return }
-        
-        viewControllers.forEach { viewControllers in
-            if let homeVC = viewControllers as? HomeViewController {
-                homeVC.userNameLabel = personData.titleName
-                homeVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
-            } else if let navigationVC = viewControllers as? UINavigationController {
-                guard let userVC = navigationVC.topViewController as? UserViewController else { return }
-                userVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
-                userVC.titleOfUserView.title = personData.titleName
-                userVC.nameOfUserLabel.text = personData.personName
-                userVC.surnameOfUserLabel.text = personData.personSurname
-                userVC.dateOfBirthLabel.text = personData.personDateOfBirth
-                userVC.workOfUserLabel.text = personData.personWork
-                userVC.hobbyOfUserLabel.text = personData.personHobby
-            } else if let contactVC = viewControllers as? ContactViewController {
-                contactVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
-                contactVC.phoneNumberLabel.text = personData.contactNumber
-                contactVC.emailLabel.text = personData.contactEmail
-                contactVC.cityLabel.text = personData.contactCity
-            } else if let logOutVC = viewControllers as? LogOutViewController {
-                logOutVC.view.addVerticalGradientLayer(topColor: firstColor, bottomColor: secondColor)
-            }
-        }
-    }
-    
     @IBAction func logInButtonTapped() {
-        guard userNameTF.text == personData.username, passwordTF.text == personData.password else {
+        guard userNameTF.text == user.login, passwordTF.text == user.password else {
             showAlert(
                 title: "Ooops!",
                 massage: "Wrong User Name or Password",
@@ -86,8 +70,8 @@ class LoginViewController: UIViewController {
     //MARK: - IB Action
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Ooops!", massage: "Your User name is \(personData.username)")
-        : showAlert(title: "Ooops!", massage: "Your password is \(personData.password)")
+        ? showAlert(title: "Ooops!", massage: "Your User name is \(user.login)")
+        : showAlert(title: "Ooops!", massage: "Your password is \(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -103,18 +87,5 @@ class LoginViewController: UIViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-}
-
-//MARK: - Set background color
-extension UIView {
-    func addVerticalGradientLayer(topColor: UIColor, bottomColor: UIColor) {
-        let gradient = CAGradientLayer()
-        gradient.frame = bounds
-        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
-        gradient.locations = [0.0, 1.0]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 0, y: 1)
-        layer.insertSublayer(gradient, at: 0)
     }
 }
